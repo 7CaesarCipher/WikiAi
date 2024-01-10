@@ -14,6 +14,8 @@
 		4F4B4CB22B4EEF6600656249 /* Wiki_AITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CB12B4EEF6600656249 /* Wiki_AITests.swift */; };
 		4F4B4CBC2B4EEF6600656249 /* Wiki_AIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CBB2B4EEF6600656249 /* Wiki_AIUITests.swift */; };
 		4F4B4CBE2B4EEF6600656249 /* Wiki_AIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CBD2B4EEF6600656249 /* Wiki_AIUITestsLaunchTests.swift */; };
+		4F4B4CCE2B4EF21C00656249 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CCD2B4EF21C00656249 /* MainView.swift */; };
+		4F4B4CD12B4EF29B00656249 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CD02B4EF29B00656249 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		4F4B4CB72B4EEF6600656249 /* Wiki.AIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Wiki.AIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4B4CBB2B4EEF6600656249 /* Wiki_AIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wiki_AIUITests.swift; sourceTree = "<group>"; };
 		4F4B4CBD2B4EEF6600656249 /* Wiki_AIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wiki_AIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4F4B4CCD2B4EF21C00656249 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4F4B4CD02B4EF29B00656249 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				4F4B4CA02B4EEF6300656249 /* Wiki_AIApp.swift */,
+				4F4B4CCC2B4EF04B00656249 /* ViewModels */,
+				4F4B4CCB2B4EF04200656249 /* Views */,
+				4F4B4CCA2B4EF03300656249 /* Models */,
 				4F4B4CA22B4EEF6300656249 /* ContentView.swift */,
 				4F4B4CA42B4EEF6500656249 /* Assets.xcassets */,
 				4F4B4CA62B4EEF6500656249 /* Preview Content */,
@@ -125,6 +132,29 @@
 				4F4B4CBD2B4EEF6600656249 /* Wiki_AIUITestsLaunchTests.swift */,
 			);
 			path = Wiki.AIUITests;
+			sourceTree = "<group>";
+		};
+		4F4B4CCA2B4EF03300656249 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F4B4CCB2B4EF04200656249 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4F4B4CCD2B4EF21C00656249 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F4B4CCC2B4EF04B00656249 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4F4B4CD02B4EF29B00656249 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F4B4CA32B4EEF6300656249 /* ContentView.swift in Sources */,
+				4F4B4CCE2B4EF21C00656249 /* MainView.swift in Sources */,
 				4F4B4CA12B4EEF6300656249 /* Wiki_AIApp.swift in Sources */,
+				4F4B4CD12B4EF29B00656249 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
