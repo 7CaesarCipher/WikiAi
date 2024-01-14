@@ -14,8 +14,13 @@
 		4F4B4CB22B4EEF6600656249 /* Wiki_AITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CB12B4EEF6600656249 /* Wiki_AITests.swift */; };
 		4F4B4CBC2B4EEF6600656249 /* Wiki_AIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CBB2B4EEF6600656249 /* Wiki_AIUITests.swift */; };
 		4F4B4CBE2B4EEF6600656249 /* Wiki_AIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CBD2B4EEF6600656249 /* Wiki_AIUITestsLaunchTests.swift */; };
-		4F4B4CCE2B4EF21C00656249 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CCD2B4EF21C00656249 /* MainView.swift */; };
+		4F4B4CCE2B4EF21C00656249 /* WikipediaSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CCD2B4EF21C00656249 /* WikipediaSearchView.swift */; };
 		4F4B4CD12B4EF29B00656249 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CD02B4EF29B00656249 /* MainViewModel.swift */; };
+		4F4B4CD32B4EFD6500656249 /* WikipediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CD22B4EFD6500656249 /* WikipediaResponse.swift */; };
+		4F4B4CD52B4F005500656249 /* Wikipedia.Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CD42B4F005500656249 /* Wikipedia.Request.swift */; };
+		4F4B4CD72B50190000656249 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CD62B50190000656249 /* SearchBar.swift */; };
+		4F4B4CD92B501DA800656249 /* WikipediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CD82B501DA800656249 /* WikipediaCell.swift */; };
+		4F4B4CDC2B50342E00656249 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B4CDB2B50342E00656249 /* Webservice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +51,13 @@
 		4F4B4CB72B4EEF6600656249 /* Wiki.AIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Wiki.AIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4B4CBB2B4EEF6600656249 /* Wiki_AIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wiki_AIUITests.swift; sourceTree = "<group>"; };
 		4F4B4CBD2B4EEF6600656249 /* Wiki_AIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wiki_AIUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4F4B4CCD2B4EF21C00656249 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4F4B4CCD2B4EF21C00656249 /* WikipediaSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaSearchView.swift; sourceTree = "<group>"; };
 		4F4B4CD02B4EF29B00656249 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4F4B4CD22B4EFD6500656249 /* WikipediaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaResponse.swift; sourceTree = "<group>"; };
+		4F4B4CD42B4F005500656249 /* Wikipedia.Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.Request.swift; sourceTree = "<group>"; };
+		4F4B4CD62B50190000656249 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		4F4B4CD82B501DA800656249 /* WikipediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaCell.swift; sourceTree = "<group>"; };
+		4F4B4CDB2B50342E00656249 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,7 @@
 		4F4B4C9F2B4EEF6300656249 /* Wiki.AI */ = {
 			isa = PBXGroup;
 			children = (
+				4F4B4CDA2B5033CF00656249 /* Others */,
 				4F4B4CA02B4EEF6300656249 /* Wiki_AIApp.swift */,
 				4F4B4CCC2B4EF04B00656249 /* ViewModels */,
 				4F4B4CCB2B4EF04200656249 /* Views */,
@@ -137,6 +148,8 @@
 		4F4B4CCA2B4EF03300656249 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4F4B4CD22B4EFD6500656249 /* WikipediaResponse.swift */,
+				4F4B4CD42B4F005500656249 /* Wikipedia.Request.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,7 +157,9 @@
 		4F4B4CCB2B4EF04200656249 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4F4B4CCD2B4EF21C00656249 /* MainView.swift */,
+				4F4B4CCD2B4EF21C00656249 /* WikipediaSearchView.swift */,
+				4F4B4CD62B50190000656249 /* SearchBar.swift */,
+				4F4B4CD82B501DA800656249 /* WikipediaCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +170,14 @@
 				4F4B4CD02B4EF29B00656249 /* MainViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4F4B4CDA2B5033CF00656249 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				4F4B4CDB2B50342E00656249 /* Webservice.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +268,9 @@
 				Base,
 			);
 			mainGroup = 4F4B4C942B4EEF6300656249;
+			packageReferences = (
+				4F4B4CDD2B51057300656249 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 4F4B4C9E2B4EEF6300656249 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -287,10 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F4B4CD72B50190000656249 /* SearchBar.swift in Sources */,
 				4F4B4CA32B4EEF6300656249 /* ContentView.swift in Sources */,
-				4F4B4CCE2B4EF21C00656249 /* MainView.swift in Sources */,
+				4F4B4CCE2B4EF21C00656249 /* WikipediaSearchView.swift in Sources */,
+				4F4B4CD92B501DA800656249 /* WikipediaCell.swift in Sources */,
+				4F4B4CD32B4EFD6500656249 /* WikipediaResponse.swift in Sources */,
 				4F4B4CA12B4EEF6300656249 /* Wiki_AIApp.swift in Sources */,
+				4F4B4CD52B4F005500656249 /* Wikipedia.Request.swift in Sources */,
 				4F4B4CD12B4EF29B00656249 /* MainViewModel.swift in Sources */,
+				4F4B4CDC2B50342E00656249 /* Webservice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +651,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F4B4CDD2B51057300656249 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 4F4B4C952B4EEF6300656249 /* Project object */;
 }

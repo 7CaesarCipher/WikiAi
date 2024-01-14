@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
-        MainView()
+        NavigationView {
+            WikipediaSearchView()
+                .navigationBarTitle("Wikipedia Search")
+        }
     }
 }
 

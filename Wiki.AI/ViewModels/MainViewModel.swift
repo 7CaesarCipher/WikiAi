@@ -4,42 +4,53 @@
 //
 //  Created by shashank Mishra on 10/01/24.
 //
-import Foundation
+import SwiftUI
 import Combine
 
-class MainViewModel: ObservableObject {
-    @Published var searchText = ""
-    @Published var wikipediaResponse: WikipediaResponse?
-    
-    private var cancellables = Set<AnyCancellable>()
-    
-    init() {
-        $searchText
-            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
-            .removeDuplicates()
-            .sink { [weak self] searchText in
-                self?.searchWikipedia(query: searchText)
-            }
-            .store(in: &cancellables)
-    }
-    
-    func searchWikipedia(query: String) {
-        let urlString = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrsearch=\(query)&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max"
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
+class WikipediaViewModel: ObservableObject {
+    @Published var searchResults: [Page] = []
+    private var cancellables: Set<AnyCancellable> = []
+
+    func search(query: String) {
+        print("Searching for: \(query)")
+      
+        guard var components = URLComponents(string: "https://en.wikipedia.org/w/api.php") else {
             return
         }
-        
+        components.queryItems = [
+            URLQueryItem(name: "format", value: "json"),
+            URLQueryItem(name: "action", value: "query"),
+            URLQueryItem(name: "generator", value: "search"),
+            URLQueryItem(name: "gsrnamespace", value: "0"),
+            URLQueryItem(name: "gsrsearch", value: query),
+            URLQueryItem(name: "gsrlimit", value: "10"),
+            URLQueryItem(name: "prop", value: "extracts|pageimages"),
+            URLQueryItem(name: "pilimit", value: "max"),
+            URLQueryItem(name: "exintro", value: ""),
+            URLQueryItem(name: "explaintext", value: ""),
+            URLQueryItem(name: "exsentences", value: "1"),
+            URLQueryItem(name: "exlimit", value: "max")
+        ]
+
+        guard let url = components.url else {
+            return
+        }
+
         URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: WikipediaResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
+            .receive(on: DispatchQueue.main) // Receive on the main thread
             .sink { completion in
-                if case let .failure(error) = completion {
-                    print("Error fetching data: \(error.localizedDescription)")
+                switch completion {
+                case .finished:
+                    print("API request completed")
+                case .failure(let error):
+                    print("API request failed with error: \(error)")
+                    // Handle the error, e.g., show an alert to the user
                 }
-            } receiveValue: { [weak self] response in
-                self?.wikipediaResponse = response
+            } receiveValue: { response in
+                print("Received response: \(response)")
+                self.searchResults = Array(response.query.pages.values)
             }
             .store(in: &cancellables)
     }
